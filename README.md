@@ -1,4 +1,4 @@
-# Online Bookstore Platform
+# E-Bookstore Platform
 This project is a comprehensive online bookstore platform developed from scratch using the .NET technology stack. It provides a seamless user experience for browsing, searching, and ordering books, along with efficient book management for administrators.
 
 # ✨ Key Features
