@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+@{
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/css/AdmDash.css"/>
+
+    <style>
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #hding {
+            color: orangered;
+            font-style: italic;
+            font-weight: bolder;
+            align-content: center;
+        }
+
+    </style>
+</head>
+
+<body>
+    <br /><br />
+    <section role="img " class="background2" aria-label="Image Description">
+        <div class="masthead2">
+
+            <h1>
+                Admin Dashboard
+            </h1>
+
+        </div>
+    </section>
+
+    <br>
+    <br>
+    <span style ="background-color: lightsalmon">
+        <u><h3 style="color:orangered"><strong>@Model</strong></h3></u>
+     </span>
+       
+    
+    <u>
+        <center>
+            <h2 id="hding">User</h2>
+        </center>
+    </u>
+    
+    <div class="buttonGroup">
+        <button class="button">
+            <a href="/Dashboard/DeleteUser"> Delete User </a>
+        </button>
+        <button class="button">
+            <a href="/Dashboard/AddUser"> Add User </a>
+        </button>
+        <button class="button">
+            <a href="/Dashboard/UpdateUser"> Update User </a>
+        </button>
+        <button class="button">
+            <a href="/Dashboard/ShowUsers"> Show All Users </a>
+        </button>
+    </div>
+    
+    <br>
+    <u>
+        <center>
+            <h2 id="hding">Books </h2>
+        </center>
+    </u>
+    
+    <div class="buttonGroup">
+        <button class="button"> 
+            <a href="/Dashboard/AddBook"> Add Book </a>
+        </button>
+        <button class="button">
+            <a href="/Dashboard/DeleteBook"> Delete Book </a>
+        </button>
+        <button class="button">
+            <a href="/Dashboard/UpdateBook"> Update Book </a>
+        </button>
+    </div>
+
+    <button class="button">
+        <a href="/Dashboard/UpdateCustomerProduct"> Send Message </a>
+    </button>
+
+</body>
+
+
+
+</html>
