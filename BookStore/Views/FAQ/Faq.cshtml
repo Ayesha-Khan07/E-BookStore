@@ -1,0 +1,641 @@
+﻿
+
+<!doctype html>
+<html lang="en-US">
+<head><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="//gmpg.org/xfn/11">
+<title> FAQ </title>
+<meta name="robots" content="max-image-preview:large" />
+<link rel="dns-prefetch" href="//demothemedh.b-cdn.net" />
+<link href="//demothemedh.b-cdn.net" rel="preconnect" />
+<link rel="alternate" type="application/rss+xml" title="Baloca &raquo; Feed" href="https://demo.leebrosus.com/baloca/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Baloca &raquo; Comments Feed" href="https://demo.leebrosus.com/baloca/comments/feed/" />
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="classic-theme-styles-css" href="https://demothemedh.b-cdn.net/baloca/wp-includes/css/classic-themes.min.css?ver=1" media="all" />
+<style id="global-styles-inline-css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel="stylesheet" id="contact-form-7-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=1670865769" media="all" />
+<style id="woocommerce-inline-inline-css">
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link data-minify="1" rel="stylesheet" id="hfe-style-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/plugins/header-footer-elementor/assets/css/header-footer-elementor.css?ver=1670865769" media="all" />
+<link data-minify="1" rel="stylesheet" id="elementor-icons-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=1670865769" media="all" />
+<link rel="stylesheet" id="elementor-frontend-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/uploads/elementor/css/custom-frontend.min.css?ver=1670587515" media="all" />
+<link data-minify="1" rel="stylesheet" id="elementor-post-8-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/uploads/elementor/css/post-8.css?ver=1670865769" media="all" />
+<link data-minify="1" rel="stylesheet" id="elementor-global-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/uploads/elementor/css/global.css?ver=1670865769" media="all" />
+<link data-minify="1" rel="stylesheet" id="elementor-post-1496-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/uploads/elementor/css/post-1496.css?ver=1670914892" media="all" />
+<link data-minify="1" rel="stylesheet" id="hfe-widgets-style-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/plugins/header-footer-elementor/inc/widgets-css/frontend.css?ver=1670865769" media="all" />
+<link data-minify="1" rel="stylesheet" id="elementor-post-280-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/uploads/elementor/css/post-280.css?ver=1670865769" media="all" />
+<link data-minify="1" rel="stylesheet" id="elementor-post-382-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/uploads/elementor/css/post-382.css?ver=1670865769" media="all" />
+<link rel="stylesheet" id="perfect-scrollbar-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/plugins/woo-smart-wishlist/assets/libs/perfect-scrollbar/css/perfect-scrollbar.min.css?ver=6.1.1" media="all" />
+<link data-minify="1" rel="stylesheet" id="perfect-scrollbar-wpc-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/plugins/woo-smart-wishlist/assets/libs/perfect-scrollbar/css/custom-theme.css?ver=1670865769" media="all" />
+<link data-minify="1" rel="stylesheet" id="woosw-icons-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/plugins/woo-smart-wishlist/assets/css/icons.css?ver=1670865769" media="all" />
+<link data-minify="1" rel="stylesheet" id="woosw-frontend-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/plugins/woo-smart-wishlist/assets/css/frontend.css?ver=1670865769" media="all" />
+<style id="woosw-frontend-inline-css">
+.woosw-popup .woosw-popup-inner .woosw-popup-content .woosw-popup-content-bot .woosw-notice { background-color: #5fbd74; } .woosw-popup .woosw-popup-inner .woosw-popup-content .woosw-popup-content-bot .woosw-popup-content-bot-inner a:hover { color: #5fbd74; border-color: #5fbd74; }
+</style>
+<link data-minify="1" rel="stylesheet" id="hint-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/plugins/wpc-variation-swatches/assets/css/hint.css?ver=1670865769" media="all" />
+<link data-minify="1" rel="stylesheet" id="wpcvs-frontend-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/plugins/wpc-variation-swatches/assets/css/frontend.css?ver=1670865769" media="all" />
+<link data-minify="1" rel="stylesheet" id="baloca-style-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/themes/baloca/style.css?ver=1670865770" media="all" />
+<style id="baloca-style-inline-css">
+:root{--primary:#e57c41;--primary_hover:#ce6a32;--secondary:#fffb9e;--secondary_hover:#fff711;--text:#626262;--accent:#151515;--border:#e6e6e6;--light:#999999;--background:#FFF;--background1:#F6F6FC;--background2:#F5F5F5;}
+.modal-quick-view-popup{ --modal-height: 650px;}
+</style>
+<link data-minify="1" rel="stylesheet" id="elementor-post-1782-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/uploads/elementor/css/post-1782.css?ver=1670865770" media="all" />
+<link data-minify="1" rel="stylesheet" id="elementor-post-681-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/uploads/elementor/css/post-681.css?ver=1670865770" media="all" />
+<link data-minify="1" rel="stylesheet" id="baloca-elementor-style-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/themes/baloca/assets/css/elementor.css?ver=1670865770" media="all" />
+<link data-minify="1" rel="stylesheet" id="baloca-woocommerce-style-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/themes/baloca/assets/css/woocommerce.css?ver=1670865770" media="all" />
+<link data-minify="1" rel="stylesheet" id="baloca-child-style-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/themes/demo-child/style.css?ver=1670865771" media="all" />
+<link rel="stylesheet" id="wp-color-picker-css" href="https://demo.leebrosus.com/baloca/wp-admin/css/color-picker.min.css?ver=6.1.1" media="all" />
+<link rel="stylesheet" id="elementor-icons-shared-0-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3" media="all" />
+<link data-minify="1" rel="stylesheet" id="elementor-icons-fa-brands-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min.css?ver=1670865771" media="all" />
+<script src="https://demothemedh.b-cdn.net/baloca/wp-includes/js/jquery/jquery.min.js?ver=3.6.1" id="jquery-core-js" defer></script>
+<script src="https://demothemedh.b-cdn.net/baloca/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2" id="jquery-migrate-js" defer></script>
+<link rel="https://api.w.org/" href="https://demo.leebrosus.com/baloca/wp-json/" /><link rel="alternate" type="application/json" href="https://demo.leebrosus.com/baloca/wp-json/wp/v2/pages/1496" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://demo.leebrosus.com/baloca/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://demothemedh.b-cdn.net/baloca/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.1.1" />
+<meta name="generator" content="WooCommerce 7.1.1" />
+<link rel="canonical" href="https://demo.leebrosus.com/baloca/faq/" />
+<link rel="shortlink" href="https://demo.leebrosus.com/baloca/?p=1496" />
+<link rel="alternate" type="application/json+oembed" href="https://demo.leebrosus.com/baloca/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdemo.leebrosus.com%2Fbaloca%2Ffaq%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://demo.leebrosus.com/baloca/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdemo.leebrosus.com%2Fbaloca%2Ffaq%2F&#038;format=xml" />
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://demothemedh.b-cdn.net/baloca/wp-content/themes/baloca/assets/fonts/baloca-icon.woff2" as="font" crossorigin>
+<link rel="preload" href="https://demothemedh.b-cdn.net/baloca/wp-content/themes/baloca/assets/fonts/MarcellusSC-Regular.woff2" as="font" crossorigin>
+<link rel="preload" href="https://demothemedh.b-cdn.net/baloca/wp-content/themes/baloca/assets/fonts/SFProDisplay-Bold.woff2" as="font" crossorigin>
+<link rel="preload" href="https://demothemedh.b-cdn.net/baloca/wp-content/themes/baloca/assets/fonts/SFProDisplay-Medium.woff2" as="font" crossorigin>
+<link rel="preload" href="https://demothemedh.b-cdn.net/baloca/wp-content/themes/baloca/assets/fonts/SFProDisplay-Regular.woff2" as="font" crossorigin>
+<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+<meta name="generator" content="Powered by Slider Revolution 6.5.25 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<script type="rocketlazyloadscript">function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;
+				try {
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) || (e.l=="fullwidth" || e.layout=="fullwidth") ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);
+					if(e.layout==="fullscreen" || e.l==="fullscreen")
+						newh = Math.max(e.mh,window.RSIH);
+					else{
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+
+						var nl = new Array(e.rl.length),
+							ix = 0,
+							sl;
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}
+					var el = document.getElementById(e.c);
+					if (el!==null && el) el.style.height = newh+"px";
+					el = document.getElementById(e.c+"_wrapper");
+					if (el!==null && el) {
+						el.style.height = newh+"px";
+						el.style.display = "block";
+					}
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}
+			//});
+		  };</script>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript> </head>
+<body class="page-template page-template-elementor_header_footer page page-id-1496 wp-custom-logo wp-embed-responsive theme-baloca woocommerce-no-js ehf-header ehf-footer ehf-template-baloca ehf-stylesheet-demo-child chrome woocommerce-active product-block-style-1 elementor-default elementor-template-full-width elementor-kit-8 elementor-page elementor-page-1496">
+<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 0.49803921568627" /><fefuncg type="table" tablevalues="0 0.49803921568627" /><fefuncb type="table" tablevalues="0 0.49803921568627" /><fefunca type="table" tablevalues="1 1" /></feComponentTransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 1" /><fefuncg type="table" tablevalues="0 1" /><fefuncb type="table" tablevalues="0 1" /><fefunca type="table" tablevalues="1 1" /></feComponentTransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.54901960784314 0.98823529411765" /><fefuncg type="table" tablevalues="0 1" /><fefuncb type="table" tablevalues="0.71764705882353 0.25490196078431" /><fefunca type="table" tablevalues="1 1" /></feComponentTransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 1" /><fefuncg type="table" tablevalues="0 0.27843137254902" /><fefuncb type="table" tablevalues="0.5921568627451 0.27843137254902" /><fefunca type="table" tablevalues="1 1" /></feComponentTransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0 0" /><fefuncg type="table" tablevalues="0 0.64705882352941" /><fefuncb type="table" tablevalues="0 1" /><fefunca type="table" tablevalues="1 1" /></feComponentTransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.78039215686275 1" /><fefuncg type="table" tablevalues="0 0.94901960784314" /><fefuncb type="table" tablevalues="0.35294117647059 0.47058823529412" /><fefunca type="table" tablevalues="1 1" /></feComponentTransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.65098039215686 0.40392156862745" /><fefuncg type="table" tablevalues="0 1" /><fefuncb type="table" tablevalues="0.44705882352941 0.4" /><fefunca type="table" tablevalues="1 1" /></feComponentTransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tablevalues="0.098039215686275 1" /><fefuncg type="table" tablevalues="0 0.66274509803922" /><fefuncb type="table" tablevalues="0.84705882352941 0.41960784313725" /><fefunca type="table" tablevalues="1 1" /></feComponentTransfer><fecomposite in2="SourceGraphic" operator="in" /></filter></defs></svg><div id="baloca-main-content">
+<div class="main-header-content">
+<div class="breadcrumb-wrap"><div class="breadcrumb-overlay"></div> <div data-elementor-type="wp-post" data-elementor-id="681" class="elementor elementor-681">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-08f7a34 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="08f7a34" data-element_type="section">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-baebc1f" data-id="baebc1f" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-f34b22c hidden-baloca-title-single-yes elementor-widget elementor-widget-baloca-breadcrumb" data-id="f34b22c" data-element_type="widget" data-widget_type="baloca-breadcrumb.default">
+<div class="elementor-widget-container">
+<div class="baloca-woocommerce-title">FAQ</div><nav class="woocommerce-breadcrumb"><a href="/Home/Hm">Home</a><i class="baloca-icon-angle-right"></i>FAQ</nav> </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div> <div data-elementor-type="wp-page" data-elementor-id="1496" class="elementor elementor-1496">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-8037ae0 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="8037ae0" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-8bbe1c6" data-id="8bbe1c6" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-23e4a4a elementor-widget elementor-widget-heading" data-id="23e4a4a" data-element_type="widget" data-widget_type="heading.default">
+<div class="elementor-widget-container">
+<h2 class="elementor-heading-title elementor-size-default">Latest Books Online</h2> </div>
+</div>
+<div class="elementor-element elementor-element-ca4cf0d elementor-widget elementor-widget-text-editor" data-id="ca4cf0d" data-element_type="widget" data-widget_type="text-editor.default">
+<div class="elementor-widget-container">
+<p>From gripping thrillers that keep you on the edge of your seat to poignant literary masterpieces that touch the depths of the soul, there is something for every literary taste. </p> </div>
+</div>
+<div class="elementor-element elementor-element-9172367 elementor-widget__width-initial elementor-absolute elementor-hidden-mobile elementor-widget elementor-widget-image" data-id="9172367" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="image.default">
+<div class="elementor-widget-container">
+<img width="886" height="590" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20886%20590'%3E%3C/svg%3E" class="attachment-full size-full wp-image-1516" alt data-lazy-srcset="https://demothemedh.b-cdn.net/baloca/wp-content/uploads/2022/11/faq.png 886w, https://demothemedh.b-cdn.net/baloca/wp-content/uploads/2022/11/faq-300x200.png 300w, https://demothemedh.b-cdn.net/baloca/wp-content/uploads/2022/11/faq-768x511.png 768w, https://demothemedh.b-cdn.net/baloca/wp-content/uploads/2022/11/faq-800x533.png 800w" data-lazy-sizes="(max-width: 886px) 100vw, 886px" data-lazy-src="https://demothemedh.b-cdn.net/baloca/wp-content/uploads/2022/11/faq.png" /><noscript><img width="886" height="590" src="https://demothemedh.b-cdn.net/baloca/wp-content/uploads/2022/11/faq.png" class="attachment-full size-full wp-image-1516" alt="" srcset="https://demothemedh.b-cdn.net/baloca/wp-content/uploads/2022/11/faq.png 886w, https://demothemedh.b-cdn.net/baloca/wp-content/uploads/2022/11/faq-300x200.png 300w, https://demothemedh.b-cdn.net/baloca/wp-content/uploads/2022/11/faq-768x511.png 768w, https://demothemedh.b-cdn.net/baloca/wp-content/uploads/2022/11/faq-800x533.png 800w" sizes="(max-width: 886px) 100vw, 886px" /></noscript> </div>
+</div>
+</div>
+</div>
+<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-4ad6f51" data-id="4ad6f51" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-5b5a4b4 elementor-widget elementor-widget-accordion" data-id="5b5a4b4" data-element_type="widget" data-widget_type="accordion.default">
+<div class="elementor-widget-container">
+<div class="elementor-accordion" role="tablist">
+<div class="elementor-accordion-item">
+<div id="elementor-tab-title-9571" class="elementor-tab-title" data-tab="1" role="tab" aria-controls="elementor-tab-content-9571" aria-expanded="false">
+<span class="elementor-accordion-icon elementor-accordion-icon-right" aria-hidden="true">
+<span class="elementor-accordion-icon-closed"><i class="baloca-icon- baloca-icon-plus"></i></span>
+<span class="elementor-accordion-icon-opened"><i class="baloca-icon- baloca-icon-minus"></i></span>
+</span>
+<a class="elementor-accordion-title" href>Can I partner or advertise with Bookstore.com</a>
+</div>
+<div id="elementor-tab-content-9571" class="elementor-tab-content elementor-clearfix" data-tab="1" role="tabpanel" aria-labelledby="elementor-tab-title-9571">Absolutely. We offer a range of advertising and partnership opportunities.For partnerships and promotions, contact <b>Online_BookStore</b> website and email on <b>onlinebookstore@gmail.com</b>
+</div>
+</div>
+<div class="elementor-accordion-item">
+<div id="elementor-tab-title-9572" class="elementor-tab-title" data-tab="2" role="tab" aria-controls="elementor-tab-content-9572" aria-expanded="false">
+<span class="elementor-accordion-icon elementor-accordion-icon-right" aria-hidden="true">
+<span class="elementor-accordion-icon-closed"><i class="baloca-icon- baloca-icon-plus"></i></span>
+<span class="elementor-accordion-icon-opened"><i class="baloca-icon- baloca-icon-minus"></i></span>
+</span>
+<a class="elementor-accordion-title" href>Does BookStore.com ship to internationally?</a>
+</div>
+<div id="elementor-tab-content-9572" class="elementor-tab-content elementor-clearfix" data-tab="2" role="tabpanel" aria-labelledby="elementor-tab-title-9572"> No. We provide our services within Punjab. You can order your books online from anywhere in Punjab and we will deliver your book within specific mentioned time according to your area or city.
+</div>
+<div class="elementor-accordion-item">
+<div id="elementor-tab-title-9573" class="elementor-tab-title" data-tab="3" role="tab" aria-controls="elementor-tab-content-9573" aria-expanded="false">
+<span class="elementor-accordion-icon elementor-accordion-icon-right" aria-hidden="true">
+<span class="elementor-accordion-icon-closed"><i class="baloca-icon- baloca-icon-plus"></i></span>
+<span class="elementor-accordion-icon-opened"><i class="baloca-icon- baloca-icon-minus"></i></span>
+</span>
+<a class="elementor-accordion-title" href>What do I do if I've received a damaged, incorrect, or otherwise defective order?</a>
+</div>
+<div id="elementor-tab-content-9573" class="elementor-tab-content elementor-clearfix" data-tab="3" role="tabpanel" aria-labelledby="elementor-tab-title-9573"> We provide the services for damage and defective products. If the book is damage or defective from our side we will replace the books.
+</div>
+<div class="elementor-accordion-item">
+<div id="elementor-tab-title-9574" class="elementor-tab-title" data-tab="4" role="tab" aria-controls="elementor-tab-content-9574" aria-expanded="false">
+<span class="elementor-accordion-icon elementor-accordion-icon-right" aria-hidden="true">
+<span class="elementor-accordion-icon-closed"><i class="baloca-icon- baloca-icon-plus"></i></span>
+<span class="elementor-accordion-icon-opened"><i class="baloca-icon- baloca-icon-minus"></i></span>
+</span>
+<a class="elementor-accordion-title" href>How do I return an order if I receive a book that I don't want?</a>
+</div>
+    <div id="elementor-tab-content-9574" class="elementor-tab-content elementor-clearfix" data-tab="4" role="tabpanel" aria-labelledby="elementor-tab-title-9574"> If you receive a wrong book. In this case you can email us on <b>onlinebookstore@gmail.com</b> or you can call us at <b>+923456787 </b>. On the other hand you can visit our book store and can get book of your choice.
+</div>
+<div class="elementor-accordion-item">
+<div id="elementor-tab-title-9575" class="elementor-tab-title" data-tab="5" role="tab" aria-controls="elementor-tab-content-9575" aria-expanded="false">
+<span class="elementor-accordion-icon elementor-accordion-icon-right" aria-hidden="true">
+<span class="elementor-accordion-icon-closed"><i class="baloca-icon- baloca-icon-plus"></i></span>
+<span class="elementor-accordion-icon-opened"><i class="baloca-icon- baloca-icon-minus"></i></span>
+</span>
+<a class="elementor-accordion-title" href>Do you have a physical store or is it online-only</a>
+</div>
+<div id="elementor-tab-content-9575" class="elementor-tab-content elementor-clearfix" data-tab="5" role="tabpanel" aria-labelledby="elementor-tab-title-9575"> We have physical book store located on <b>Model Town, Lahore</b>. We provide our services online as well as physically. You can order online or you can buy books by visiting our Book store.
+</div>
+<div class="elementor-accordion-item">
+<div id="elementor-tab-title-9576" class="elementor-tab-title" data-tab="6" role="tab" aria-controls="elementor-tab-content-9576" aria-expanded="false">
+<span class="elementor-accordion-icon elementor-accordion-icon-right" aria-hidden="true">
+<span class="elementor-accordion-icon-closed"><i class="baloca-icon- baloca-icon-plus"></i></span>
+<span class="elementor-accordion-icon-opened"><i class="baloca-icon- baloca-icon-minus"></i></span>
+</span>
+<a class="elementor-accordion-title" href>What is mode of payment if I order book online</a>
+</div>
+<div id="elementor-tab-content-9576" class="elementor-tab-content elementor-clearfix" data-tab="6" role="tabpanel" aria-labelledby="elementor-tab-title-9576"> We provide two modes of payment. You can pay online or you can pay on delivery time.
+</div>
+</div>
+<div class="elementor-accordion-item">
+<div id="elementor-tab-title-9577" class="elementor-tab-title" data-tab="7" role="tab" aria-controls="elementor-tab-content-9577" aria-expanded="false">
+<span class="elementor-accordion-icon elementor-accordion-icon-right" aria-hidden="true">
+<span class="elementor-accordion-icon-closed"><i class="baloca-icon- baloca-icon-plus"></i></span>
+<span class="elementor-accordion-icon-opened"><i class="baloca-icon- baloca-icon-minus"></i></span>
+</span>
+<a class="elementor-accordion-title" href>How do I create an account on your website</a>
+</div>
+<div id="elementor-tab-content-9577" class="elementor-tab-content elementor-clearfix" data-tab="7" role="tabpanel" aria-labelledby="elementor-tab-title-9577"> You can create your account on BookStore.com by signUp page and then you can logIn your account. After login you can order books and can add your books in whish list.
+</div>
+<div class="elementor-accordion-item">
+<div id="elementor-tab-title-9578" class="elementor-tab-title" data-tab="8" role="tab" aria-controls="elementor-tab-content-9578" aria-expanded="false">
+<span class="elementor-accordion-icon elementor-accordion-icon-right" aria-hidden="true">
+<span class="elementor-accordion-icon-closed"><i class="baloca-icon- baloca-icon-plus"></i></span>
+<span class="elementor-accordion-icon-opened"><i class="baloca-icon- baloca-icon-minus"></i></span>
+</span>
+<a class="elementor-accordion-title" href>Do you offer gift wrapping services?</a>
+</div>
+<div id="elementor-tab-content-9578" class="elementor-tab-content elementor-clearfix" data-tab="8" role="tabpanel" aria-labelledby="elementor-tab-title-9578"> Yes. We provide the gift wrapping services.
+</div>
+<div class="elementor-accordion-item">
+<div id="elementor-tab-title-9579" class="elementor-tab-title" data-tab="9" role="tab" aria-controls="elementor-tab-content-9579" aria-expanded="false">
+<span class="elementor-accordion-icon elementor-accordion-icon-right" aria-hidden="true">
+<span class="elementor-accordion-icon-closed"><i class="baloca-icon- baloca-icon-plus"></i></span>
+<span class="elementor-accordion-icon-opened"><i class="baloca-icon- baloca-icon-minus"></i></span>
+</span>
+<a class="elementor-accordion-title" href>Are there any discounts or promotions available</a>
+</div>
+<div id="elementor-tab-content-9579" class="elementor-tab-content elementor-clearfix" data-tab="9" role="tabpanel" aria-labelledby="elementor-tab-title-9579"> Yes. We provide discount and promotions on some specific kinds of books.
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<footer itemtype="https://schema.org/WPFooter" itemscope="itemscope" id="colophon" role="contentinfo">
+<div class="footer-width-fixer"> <div data-elementor-type="wp-post" data-elementor-id="382" class="elementor elementor-382">
+<section class="elementor-section elementor-top-section elementor-element elementor-element-7084392 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="7084392" data-element_type="section">
+<div class="elementor-container elementor-column-gap-no">
+<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a111a91" data-id="a111a91" data-element_type="column">
+<div class="elementor-widget-wrap elementor-element-populated">
+<div class="elementor-element elementor-element-3178d6a elementor-position-left elementor-vertical-align-middle elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="3178d6a" data-element_type="widget" data-widget_type="icon-box.default">
+<div class="elementor-widget-container">
+<div class="elementor-icon-box-wrapper">
+<div class="elementor-icon-box-icon">
+<span class="elementor-icon elementor-animation-">
+<i aria-hidden="true" class="baloca-icon- baloca-icon-delivery"></i> </span>
+</div>
+<div class="elementor-icon-box-content">
+<h3 class="elementor-icon-box-title">
+<span>
+    <b>Free Delivery</b> </span>
+</h3>
+<p class="elementor-icon-box-description">
+For all oders over RS.5000 </p>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-c6bcc89 elementor-position-left elementor-vertical-align-middle elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="c6bcc89" data-element_type="widget" data-widget_type="icon-box.default">
+<div class="elementor-widget-container">
+<div class="elementor-icon-box-wrapper">
+<div class="elementor-icon-box-icon">
+<span class="elementor-icon elementor-animation-">
+<i aria-hidden="true" class="baloca-icon- baloca-icon-comments-1"></i> </span>
+</div>
+<div class="elementor-icon-box-content">
+<h3 class="elementor-icon-box-title">
+<span>
+    <b>Expert customer Service</b>
+ </span>
+</h3>
+<p class="elementor-icon-box-description">
+For a shopping experience </p>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-2103671 elementor-position-left elementor-vertical-align-middle elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="2103671" data-element_type="widget" data-widget_type="icon-box.default">
+<div class="elementor-widget-container">
+<div class="elementor-icon-box-wrapper">
+<div class="elementor-icon-box-icon">
+<span class="elementor-icon elementor-animation-">
+<i aria-hidden="true" class="baloca-icon- baloca-icon-offer"></i> </span>
+</div>
+<div class="elementor-icon-box-content">
+<h3 class="elementor-icon-box-title">
+<span>
+    <b>Amazing Value</b>
+ </span>
+</h3>
+<p class="elementor-icon-box-description">
+We offer reasonable prices </p>
+</div>
+</div>
+</div>
+</div>
+<div class="elementor-element elementor-element-505ed4a elementor-position-left elementor-vertical-align-middle elementor-view-default elementor-mobile-position-top elementor-widget elementor-widget-icon-box" data-id="505ed4a" data-element_type="widget" data-widget_type="icon-box.default">
+<div class="elementor-widget-container">
+<div class="elementor-icon-box-wrapper">
+<div class="elementor-icon-box-icon">
+<span class="elementor-icon elementor-animation-">
+<i aria-hidden="true" class="baloca-icon- baloca-icon-payment"></i> </span>
+</div>
+<div class="elementor-icon-box-content">
+<h3 class="elementor-icon-box-title">
+<span>
+    <b>Safe Payment</b>
+ </span>
+</h3>
+<p class="elementor-icon-box-description">
+100% secure payment </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="wishlist-side-overlay side-overlay"></div>
+<div class="site-search-popup">
+<div class="site-search-popup-wrap">
+<a href="#" class="site-search-popup-close"><span class="screen-reader-text">Close</span></a>
+<div class="site-search">
+<div class="ajax-search">
+<form role="search" method="get" class="woocommerce-product-search" action="https://demo.leebrosus.com/baloca/">
+<div class="baloca-search-product-form">
+<div class="product-cat">
+<div class="product-cat-label">
+<div class="box">
+<span class="product-cat-name">All Category</span>
+<i class="baloca-icon-caret-down"></i>
+<select name="product_cat" id="product_cat1" class="dropdown_product_cat_ajax">
+<option  selected="selected">All Category</option>
+<option class="level-0" value="action-adventure">Action &amp; Adventure</option>
+<option class="level-0" value="activity-books">Activity Books</option>
+<option class="level-0" value="animals">Animals</option>
+<option class="level-0" value="anthologies">Anthologies</option>
+<option class="level-0" value="arts-literature">Arts &amp; Literature</option>
+<option class="level-0" value="cars-trucks">Cars &amp; Trucks</option>
+<option class="level-0" value="classics">Classics</option>
+<option class="level-0" value="contemporary">Contemporary</option>
+<option class="level-0" value="cultural">Cultural</option>
+<option class="level-0" value="european">European</option>
+<option class="level-0" value="foreign-language">Foreign Language</option>
+<option class="level-0" value="genre-fiction">Genre Fiction</option>
+<option class="level-0" value="historical">Historical</option>
+</select>
+</div>
+</div>
+</div>
+<div class="search-wrapper">
+<input type="search" id="woocommerce-product-search-field-2" class="search-field" placeholder="I’m looking for&hellip;" autocomplete="off" value name="s" />
+<input type="hidden" name="post_type" value="product" />
+</div>
+<button type="submit" value="Search">
+<i class="baloca-icon-search"></i>
+<span>Search</span>
+</button>
+</div>
+</form>
+<div class="ajax-search-result d-none">
+<div class="inner"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/html" id="tmpl-ajax-live-search-template">
+        <div class="product-item-search">
+            <# if(data.url){ #>
+            <a class="product-link" href="{{{data.url}}}" title="{{{data.title}}}">
+            <# } #>
+                <# if(data.img){#>
+                <img src="{{{data.img}}}" alt="{{{data.title}}}">
+                 <# } #>
+                <div class="product-content">
+                <h3 class="product-title">{{{data.title}}}</h3>
+                <# if(data.price){ #>
+                {{{data.price}}}
+                 <# } #>
+                </div>
+                <# if(data.url){ #>
+            </a>
+            <# } #>
+        </div>
+        </script><button type="button" id="btn-back-to-top">
+<i class="baloca-icon-arrow-up"></i>
+</button> <div class="site-header-cart-side side-wrap">
+<span class="hint--left close-hint-side" aria-label="Close">
+<a href="#" class="close-side">
+<span class="screen-reader-text">Close</span>
+</a>
+</span>
+<div class="cart-side-heading side-heading">
+<span class="cart-side-title side-title">Shopping cart</span>
+</div>
+<div class="widget woocommerce widget_shopping_cart"><div class="widget_shopping_cart_content"></div></div> </div>
+<div class="cart-side-overlay side-overlay"></div>
+<div class="baloca-modal modal-coupon" id="modal-cart-coupon">
+<div class="modal-overlay"></div>
+<div class="modal-content">
+<div class="button-close-modal"></div>
+<div class="modal-content-wrap">
+<div class="modal-content-inner">
+<div class="coupons-not-found">
+Have no coupons here! </div>
+</div>
+</div>
+</div>
+</div>
+<div class="site-wishlist-side side-wrap">
+<span class="hint--bounce hint--left close-hint-side" aria-label="Close">
+<a href="#" class="close-wishlist-side close-side"><span class="screen-reader-text">Close</span></a>
+</span>
+<div class="wishlist-side-heading side-heading">
+<span class="wishlist-side-title side-title">Wishlist</span>
+</div>
+<div class="wishlist-side-wrap-content">
+<div class="baloca-wishlist-content-scroll">
+<div class="baloca-wishlist-content">
+</div>
+</div>
+<div class="baloca-wishlist-bottom">
+<a class="button" href="https://demo.leebrosus.com/baloca/wishlist/">Wishlist page</a>
+</div>
+</div>
+</div>
+<div class="wishlist-side-overlay side-overlay"></div>
+<div class="baloca-mobile-nav">
+<div class="menu-scroll-mobile">
+<a href="#" class="mobile-nav-close"><i class="baloca-icon-times"></i></a>
+<div class="mobile-nav-tabs">
+<ul>
+<li class="mobile-tab-title mobile-pages-title active" data-menu="pages">
+<span>Main Menu</span>
+</li>
+<li class="mobile-tab-title mobile-categories-title" data-menu="categories">
+<span>All Departments</span>
+</li>
+</ul>
+</div>
+<nav class="mobile-menu-tab mobile-navigation mobile-pages-menu active" aria-label="Mobile Navigation">
+<div class="handheld-navigation"><ul id="menu-main-menu" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-has-children menu-item-275"><a href="https://demo.leebrosus.com/baloca/"><span class="menu-title">Home</span></a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-277"><a href="https://demo.leebrosus.com/baloca/"><span class="menu-title">Home 1</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-273"><a href="https://demo.leebrosus.com/baloca/home-2/"><span class="menu-title">Home 2</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-845"><a href="https://demo.leebrosus.com/baloca/home-3/"><span class="menu-title">Home 3</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1149"><a href="https://demo.leebrosus.com/baloca/home-4/"><span class="menu-title">Home 4</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1801"><a href="https://demo.leebrosus.com/baloca/home-5/"><span class="menu-title">Home 5</span></a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-1150"><a href="#"><span class="menu-title">Pages</span></a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1495"><a href="https://demo.leebrosus.com/baloca/about/"><span class="menu-title">About</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-1496 current_page_item menu-item-1536"><a href="https://demo.leebrosus.com/baloca/faq/"><span class="menu-title">FAQ</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-274"><a href="https://demo.leebrosus.com/baloca/icons/"><span class="menu-title">Icons</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1151"><a href="https://demo.leebrosus.com/baloca/404-page/"><span class="menu-title">404 Page</span></a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-276"><a href="https://demo.leebrosus.com/baloca/shop/"><span class="menu-title">Shop</span></a>
+<ul class="sub-menu">
+<li id="menu-item-1806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1806"><a href="https://demo.leebrosus.com/baloca/my-orders/"><span class="menu-title">My Orders</span></a></li>
+<li id="menu-item-1804" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1804"><a href="https://demo.leebrosus.com/baloca/cart/"><span class="menu-title">Cart</span></a></li>
+<li id="menu-item-1803" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1803"><a href="https://demo.leebrosus.com/baloca/my-account/"><span class="menu-title">My account</span></a></li>
+<li id="menu-item-1802" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1802"><a href="https://demo.leebrosus.com/baloca/wishlist/"><span class="menu-title">Wishlist</span></a></li>
+<li id="menu-item-1807" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1807"><a href="https://demo.leebrosus.com/baloca/my-account/lost-password/"><span class="menu-title">Lost password</span></a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1330"><a href="https://demo.leebrosus.com/baloca/product-author/"><span class="menu-title">Authors</span></a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1349"><a href="https://demo.leebrosus.com/baloca/product-author/"><span class="menu-title">Author List</span></a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_author menu-item-1347"><a href="https://demo.leebrosus.com/baloca/product-author/dana-chambers/"><span class="menu-title">Author Detail</span></a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1317"><a href="https://demo.leebrosus.com/baloca/blog/"><span class="menu-title">Blog</span></a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1666"><a href="https://demo.leebrosus.com/baloca/blog/"><span class="menu-title">Blog Sidebar</span></a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1667"><a href="https://demo.leebrosus.com/baloca/blog/?blog_style=grid&#038;sidebar-blog=0"><span class="menu-title">Blog Grid</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1318"><a href="https://demo.leebrosus.com/baloca/oprahs-latest-book-club-pick-is-being-adapted-for-tv-2/"><span class="menu-title">Single Post</span></a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1307"><a href="https://demo.leebrosus.com/baloca/contact/"><span class="menu-title">Contact</span></a></li>
+</ul></div> </nav>
+<nav class="mobile-menu-tab mobile-navigation mobile-categories-menu" aria-label="Mobile Navigation">
+<div class="handheld-navigation"><ul id="menu-all-departments" class="menu"><li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1766"><a href="https://demo.leebrosus.com/baloca/product-category/cultural/"><i class="menu-icon baloca-icon-books"></i><span class="menu-title">Books</span></a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1767"><a href="https://demo.leebrosus.com/baloca/product-category/action-adventure/"><i class="menu-icon baloca-icon-fiction"></i><span class="menu-title">Fiction</span></a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1768"><a href="https://demo.leebrosus.com/baloca/product-category/activity-books/"><i class="menu-icon baloca-icon-ebook"></i><span class="menu-title">eBooks</span></a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1769"><a href="https://demo.leebrosus.com/baloca/product-category/anthologies/"><i class="menu-icon baloca-icon-audio-book"></i><span class="menu-title">Audio Books</span></a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1770"><a href="https://demo.leebrosus.com/baloca/product-category/arts-literature/"><i class="menu-icon baloca-icon-teen"></i><span class="menu-title">Teens &#038; YA</span></a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1771"><a href="https://demo.leebrosus.com/baloca/product-category/contemporary/"><i class="menu-icon baloca-icon-kid"></i><span class="menu-title">Kids</span></a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1772"><a href="https://demo.leebrosus.com/baloca/product-category/classics/"><i class="menu-icon baloca-icon-games"></i><span class="menu-title">Toys &#038; Games</span></a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1774"><a href="https://demo.leebrosus.com/baloca/product-category/animals/"><i class="menu-icon baloca-icon-paint"></i><span class="menu-title">Stationery &#038; Gifts</span></a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-1775"><a href="https://demo.leebrosus.com/baloca/product-category/historical/"><i class="menu-icon baloca-icon-music"></i><span class="menu-title">Music &#038; Movies</span></a></li>
+</ul></div> </nav>
+</div>
+<div class="baloca-language-switcher-mobile">
+<ul class="menu">
+<li class="item">
+<div class="language-switcher-head">
+<img width="18" height="12" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2012'%3E%3C/svg%3E" alt="WPML" data-lazy-src="https://demothemedh.b-cdn.net/baloca/wp-content/themes/baloca/assets/images/language-switcher/en.png"><noscript><img width="18" height="12"
+                            src="https://demothemedh.b-cdn.net/baloca/wp-content/themes/baloca/assets/images/language-switcher/en.png"
+                            alt="WPML"></noscript>
+</div>
+</li>
+<li class="item">
+<div class="language-switcher-img">
+<a href="#">
+<img width="18" height="12" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2012'%3E%3C/svg%3E" alt="WPML" data-lazy-src="https://demothemedh.b-cdn.net/baloca/wp-content/themes/baloca/assets/images/language-switcher/de.png"><noscript><img width="18" height="12"
+                                src="https://demothemedh.b-cdn.net/baloca/wp-content/themes/baloca/assets/images/language-switcher/de.png"
+                                alt="WPML"></noscript>
+</a>
+</div>
+</li>
+<li class="item">
+<div class="language-switcher-img">
+<a href="#">
+<img width="18" height="12" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2012'%3E%3C/svg%3E" alt="WPML" data-lazy-src="https://demothemedh.b-cdn.net/baloca/wp-content/themes/baloca/assets/images/language-switcher/it.png"><noscript><img width="18" height="12"
+                                src="https://demothemedh.b-cdn.net/baloca/wp-content/themes/baloca/assets/images/language-switcher/it.png"
+                                alt="WPML"></noscript>
+</a>
+</div>
+</li>
+<li class="item">
+<div class="language-switcher-img">
+<a href="#">
+<img width="18" height="12" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2018%2012'%3E%3C/svg%3E" alt="WPML" data-lazy-src="https://demothemedh.b-cdn.net/baloca/wp-content/themes/baloca/assets/images/language-switcher/hi.png"><noscript><img width="18" height="12"
+                                src="https://demothemedh.b-cdn.net/baloca/wp-content/themes/baloca/assets/images/language-switcher/hi.png"
+                                alt="WPML"></noscript>
+</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="baloca-overlay"></div>
+<link rel="stylesheet" id="e-animations-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.9.0" media="all" />
+<link data-minify="1" rel="stylesheet" id="rs-plugin-settings-css" href="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/baloca/wp-content/plugins/revslider/public/assets/css/rs6.css?ver=1670865771" media="all" />
+<style id="rs-plugin-settings-inline-css">
+#rs-demo-id {}
+</style>
+<script id="contact-form-7-js-extra">
+var wpcf7 = {"api":{"root":"https:\/\/demo.leebrosus.com\/baloca\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+</script>
+<script id="wc-add-to-cart-js-extra">
+var wc_add_to_cart_params = {"ajax_url":"\/baloca\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/baloca\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/demo.leebrosus.com\/baloca\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+</script>
+<script id="woocommerce-js-extra">
+var woocommerce_params = {"ajax_url":"\/baloca\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/baloca\/?wc-ajax=%%endpoint%%"};
+</script>
+<script id="wc-cart-fragments-js-extra">
+var wc_cart_fragments_params = {"ajax_url":"\/baloca\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/baloca\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_ff971cffa95857e18fcc6f0c6547a74f","fragment_name":"wc_fragments_ff971cffa95857e18fcc6f0c6547a74f","request_timeout":"5000"};
+</script>
+<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"\/baloca(\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/checkout\/|\/cart\/|\/my-account\/|\/wc-api\/v(.*)|\/(index\\.php\/)?wp\\-json(\/.*|$))|\/wp-admin\/|\/logout\/|\/wp-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/demo.leebrosus.com\/baloca","onHoverDelay":"100","rateThrottle":"3"};
+</script>
+<script type="rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script id="woosw-frontend-js-extra">
+var woosw_vars = {"ajax_url":"https:\/\/demo.leebrosus.com\/baloca\/wp-admin\/admin-ajax.php","menu_action":"open_page","perfect_scrollbar":"yes","wishlist_url":"https:\/\/demo.leebrosus.com\/baloca\/wishlist\/","button_action":"list","message_position":"right-top","button_action_added":"popup","empty_confirm":"This action cannot be undone. Are you sure?","delete_confirm":"This action cannot be undone. Are you sure?","copied_text":"Copied the wishlist link:","menu_text":"Wishlist","button_text":"Add to wishlist","button_text_added":"Browse wishlist","button_normal_icon":"woosw-icon-5","button_added_icon":"woosw-icon-8","button_loading_icon":"woosw-icon-4"};
+</script>
+<script id="wpcvs-frontend-js-extra">
+var wpcvs_vars = {"ajax_url":"https:\/\/demo.leebrosus.com\/baloca\/wp-admin\/admin-ajax.php","nonce":"7677f92720","second_click":"no","archive_enable":"no","archive_product":".product","archive_image":".attachment-woocommerce_thumbnail","archive_atc":".add_to_cart_button","archive_atc_text":".add_to_cart_button","add_to_cart":"Add to cart","select_options":"Select options","view_cart":"<a href=\"https:\/\/demo.leebrosus.com\/baloca\/cart\/\" class=\"added_to_cart wc-forward\" title=\"View cart\">View cart<\/a>"};
+</script>
+<script id="wp-util-js-extra">
+var _wpUtilSettings = {"ajax":{"url":"\/baloca\/wp-admin\/admin-ajax.php"}};
+</script>
+<script id="baloca-theme-js-extra">
+var balocaVariable = {"ajaxurl":"https:\/\/demo.leebrosus.com\/baloca\/wp-admin\/admin-ajax.php","nonce":"ce854dbfc6","apply_coupon_nonce":"e573beeb37","is_checkout":"","quick_view_css":"https:\/\/demo.leebrosus.com\/baloca\/wp-content\/themes\/baloca\/assets\/css\/woocommerce-detail.css"};
+</script>
+<script type="rocketlazyloadscript" src="https://demothemedh.b-cdn.net/baloca/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
+<script type="rocketlazyloadscript" src="https://demothemedh.b-cdn.net/baloca/wp-includes/js/dist/hooks.min.js?ver=4169d3cf8e8d95a3d6d5" id="wp-hooks-js"></script>
+<script type="rocketlazyloadscript" src="https://demothemedh.b-cdn.net/baloca/wp-includes/js/dist/i18n.min.js?ver=9e794f35a71bb98672ae" id="wp-i18n-js"></script>
+<script id="wp-color-picker-js-extra">
+var wpColorPickerL10n = {"clear":"Clear","defaultString":"Default","pick":"Select Color","current":"Current Color"};
+</script>
+<script type="rocketlazyloadscript" id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Extra","value":880,"default_value":880,"direction":"max","is_enabled":true},"tablet":{"label":"Tablet","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Extra","value":1170,"default_value":1200,"direction":"max","is_enabled":true},"laptop":{"label":"Laptop","value":1290,"default_value":1366,"direction":"max","is_enabled":true},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.9.0","is_static":false,"experimentalFeatures":{"e_dom_optimization":true,"a11y_improvements":true,"additional_custom_breakpoints":true,"e_import_export":true,"e_hidden_wordpress_widgets":true,"landing-pages":true,"elements-color-picker":true,"favorite-widgets":true,"admin-top-bar":true,"kit-elements-defaults":true},"urls":{"assets":"https:\/\/demo.leebrosus.com\/baloca\/wp-content\/plugins\/elementor\/assets\/"},"settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_mobile_extra","viewport_tablet","viewport_tablet_extra","viewport_laptop"],"viewport_mobile":767,"viewport_mobile_extra":880,"viewport_tablet":1024,"viewport_tablet_extra":1170,"viewport_laptop":1290,"woo_carousel_slides_to_show":"4","woo_carousel_slides_to_show_tablet_extra":"3","woo_carousel_slides_to_show_mobile_extra":"2.3","woo_carousel_slides_to_show_mobile":"2.3","woo_carousel_slides_to_scroll":"1","woo_carousel_spaceBetween_mobile_extra":{"unit":"px","size":15,"sizes":[]},"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description","woo_carousel_spaceBetween":{"unit":"px","size":30,"sizes":[]},"woo_carousel_spaceBetween_laptop":{"unit":"px","size":"","sizes":[]},"woo_carousel_spaceBetween_tablet_extra":{"unit":"px","size":"","sizes":[]},"woo_carousel_spaceBetween_tablet":{"unit":"px","size":"","sizes":[]},"woo_carousel_spaceBetween_mobile":{"unit":"px","size":"","sizes":[]},"woo_carousel_navigation":"dots","woo_carousel_autoplay":"yes","woo_carousel_autoplay_speed":5000},"post":{"id":1496,"title":"FAQ%20%E2%80%93%20Baloca","excerpt":"","featuredImage":false}};
+</script>
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://demothemedh.b-cdn.net/baloca/wp-content/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.min.js"></script>
+<script type="rocketlazyloadscript" src="https://demothemedh.b-cdn.net/baloca/wp-content/cache/min/1/8ce5780a4e971e42fe91520cf1486283.js" data-minify="1" defer></script></body>
+</html>
