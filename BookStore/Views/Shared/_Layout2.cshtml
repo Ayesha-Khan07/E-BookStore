@@ -1,0 +1,26 @@
+﻿@{
+	Layout = null;
+}
+<html>
+	<head>
+		<link rel="stylesheet" href="~/css/style.css">
+		<link rel="stylesheet" href="~/font-awesome/css/font-awesome.css">
+	</head>
+	<body>
+		<nav>
+                <a href="#" class="logo"><img src="~/booksImages/logo2.png" alt=""></a>
+                <ul class="menu">
+                    <li><a href="/Home/Hm" class="active">Home</a></li>
+                    <li><a href="/Features/Feat">featured</a></li>
+                    <li><a href="/Contact/Cont">Contact Us</a></li>
+                    <li><a href="/Categories/Cat">catagories</a></li>
+                    <li><a href="/Writers/Wri">Writer</a></li>
+                    <li><a href="/FAQ/Faq">FAQ</a></li>
+                   <li><a href="/Logout/logout">Logout</a></li>
+                </ul>
+                <a href="#" class="siteName">BookStore</a>
+            </nav>
+            <br /><br />
+            @RenderBody();
+	</body>
+</html>
